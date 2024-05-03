@@ -1,0 +1,41 @@
+#Benny Marcano Tirado
+#Square and Multiply
+
+def calc(x, exp, mod_value):
+  #i va a ser el resultado
+  i = 1
+
+  #x = base % valor de modulo
+  x = x % mod_value
+  
+  while exp > 0:
+    #exponenciacion al cuadrado, elevando x a un num impar se puede representar multiplicando x con si mismo otra vez
+    if exp % 2 == 1:
+      i = (i * x) % mod_value
+  
+    #el // divide descartando si el numero es un decimal. Basicamente divide y resulta en entero
+    exp = exp // 2
+  
+    x = (x * x) % mod_value
+  
+  return i 
+
+x = 19
+exp = 2
+mod = 1
+
+print("x:", x)
+print("Exp:", exp)
+print("Mod:", mod)
+print("Potencia en aritmetica modular es:", calc(x, exp, mod))
+print("")
+
+x = 31
+exp = 2
+mod = 4
+
+print("x:", x)
+print("Exp:", exp)
+print("Mod:", mod)
+print("Potencia en aritmetica modular es:", calc(x, exp, mod))
+
